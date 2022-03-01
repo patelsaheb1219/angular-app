@@ -1,18 +1,17 @@
 <div class="login_container">
   <mat-card>
     <mat-card-content>
-    <form class="example-form">
+    <form class="example-form" (ngSubmit)="onSubmit()">
       <h2>LOGIN</h2>
-      <mat-form-field class="example-full-width" appearance="fill">
+      <img src="/assets/images/logo_small.png" alt="logo" width="150" />
+      <mat-form-field appearance="fill">
         <mat-label>Email</mat-label>
-        <input type="text" matInput placeholder="Enter user email" class="email_input">
+        <input type="text" matInput placeholder="Enter your email" name="email" [(ngModel)]="email" id="email">
       </mat-form-field>
-
-      <mat-form-field class="example-full-width" appearance="fill">
+      <mat-form-field appearance="fill">
         <mat-label>Password</mat-label>
-        <input type="password" matInput placeholder="Enter user password" class="email_input">
+        <input type="password" matInput placeholder="Enter your password" name="password" id="password" [(ngModel)]="password">
       </mat-form-field>
-
       <button mat-raised-button color="primary" class="button">Login</button>
     </form>
     </mat-card-content>
