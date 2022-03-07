@@ -1,10 +1,38 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <!--  <span>HOME</span> -->
-    <span><a href="/">HOME</a></span>
-    <span class="spacer"></span>
-    <a mat-button routerLink="/register">Register</a>
-    <a mat-button routerLink="/login">Login</a>
-  </mat-toolbar-row>
-</mat-toolbar>
+<div class="login_container">
+  <mat-card>
+    <mat-card-content>
+    <form (ngSubmit)="onSubmit()">
+      <h2>REGISTER</h2>
+      <img src="/assets/images/logo_small.png" alt="logo" width="150" />
+      <mat-form-field appearance="fill">
+        <mat-label>Full Name</mat-label>
+        <input type="text" matInput placeholder="Enter your name" name="name" [(ngModel)]="name" id="name">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input type="text" matInput placeholder="Enter your email" name="email" [(ngModel)]="email" id="email">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Telephone</mat-label>
+        <input type="text" matInput placeholder="Enter your telephone" name="telephone" [(ngModel)]="telephone" id="telephone">
+      </mat-form-field>
+      <section class="section">
+        <label class="radio_margin"><b>Role : </b></label>
+        <mat-radio-group name="role" [(ngModel)]="role">
+          <mat-radio-button color="primary" class="radio-margin" value="customer">Customer</mat-radio-button>
+          <mat-radio-button color="primary" class="radio-margin" value="seller">Seller</mat-radio-button>
+        </mat-radio-group>
+      </section>
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput placeholder="Enter your password" name="password" id="password" [(ngModel)]="password">
+      </mat-form-field>  
+      <mat-form-field appearance="fill">
+        <mat-label>Confirm Password</mat-label>
+        <input type="password" matInput placeholder="Enter your password" name="confirm_password" id="confirm_password" [(ngModel)]="confirmPassword">
+      </mat-form-field>
+      <button mat-raised-button color="primary" class="button">Register</button>
+    </form>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -21,4 +21,9 @@ export class AuthService {
     const url = `${this.apiUrl}/login`; 
     return this.http.post<any>(url, user, httpOptions);
   }
+
+  registerUser(user: any): Observable<any> {
+    const url = `${this.apiUrl}/register`;
+    return this.http.post<any>(url, user, httpOptions);
+  }
 }

@@ -3,19 +3,23 @@
     <button mat-button routerLink="/"><mat-icon>home</mat-icon></button>
   </span>
   <div fxLayout="row" fxShow="false" fxShow.gt-sm>
-    <button mat-button routerLink="/login">
+    <button mat-button routerLink="/login" *ngIf="!isLoggedIn">
       <mat-icon>power_settings_new</mat-icon>
       Login
     </button>
 
-    <button mat-button routerLink="/register">
+    <button mat-button routerLink="/register" *ngIf="!isLoggedIn">
       <mat-icon>person_pin</mat-icon>
       Register
     </button>
-    <!-- <button mat-button>
+    <button mat-button routerLink="/home" *ngIf="isLoggedIn">
+      <mat-icon>account_box</mat-icon>
+      My Profile
+    </button>
+    <button mat-button *ngIf="isLoggedIn" (click)="logoutUser()">
       <mat-icon>exit_to_app</mat-icon>
       Logout
-    </button> -->
+    </button>
     <!-- <button mat-button routerLink="/game">
       <mat-icon>gamepad</mat-icon>
       Play

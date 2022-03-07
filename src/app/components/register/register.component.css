@@ -1,3 +1,33 @@
-.spacer {
-  flex: 1 1 auto;
+mat-card {
+  max-width: 400px;
+  margin: 2em auto;
+  text-align: center;
+}
+
+mat-form-field {
+  display: block;
+}
+
+.example-h2 {
+  margin: 10px;
+}
+
+.section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.radio-margin {
+  margin: 5px 10px;
+}
+
+img {
+  margin-bottom: 15px;
+}
+
+.button {
+  padding: 5px;
+  width: 100%;
 }

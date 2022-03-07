@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import {MatSnackBar} from '@angular/material/snack-bar';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -11,12 +13,12 @@ export class LoginComponent implements OnInit {
   email!: string;
   password!: string;
 
-  constructor(private authService: AuthService) { }
+  constructor(private router: Router, private authService: AuthService, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
   }
 
-  async onSubmit() {
+  onSubmit() {
     const user = {
       email: this.email!,
       password: this.password!
@@ -25,11 +27,16 @@ export class LoginComponent implements OnInit {
     this.authService.loginUser(user).subscribe({
       next(res) {
         localStorage.setItem("authToken", res.data);
+        window.location.href = "/home";
       },
       error(err) {
         console.log("Error ->", err);
       }
     });
+  }
+
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action);
   }
 
 }
